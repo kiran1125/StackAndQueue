@@ -6,6 +6,9 @@ public class MyQueueMain {
         myQueue.enQueue(56);
         myQueue.enQueue(30);
         myQueue.enQueue(70);
-
+        System.out.println(myQueue.deQueue());
+        System.out.println(myQueue.deQueue());
+        System.out.println(myQueue.deQueue());
+        System.out.println(myQueue.deQueue());
     }
 }

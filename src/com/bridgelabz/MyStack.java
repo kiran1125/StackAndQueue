@@ -6,7 +6,7 @@ package com.bridgelabz;
  * @Dated - 8/11/2021
  */
 public class MyStack {
-    Node head,top;                                //Class level variables
+    Node head;                                //Class level variables
 
     /**
      * To push the data to stack with input data
@@ -15,12 +15,35 @@ public class MyStack {
     public void push(int data) {
         Node nnode = new Node(data);
         if (head == null){
-            head = top = nnode;
+            head = nnode;
         }
         else{
-            Node temp = top;                        //Swapping
-            top = nnode;
-            temp.next = top;
+            Node temp = head;                        //Swapping
+            head = nnode;
+            head.data = nnode.data;
+            head.next = temp;
+        }
+    }
+
+    /**
+     * It returns the head data
+     * @return value
+     */
+    public int peek() {
+        int value = head.data;
+        return value;
+    }
+
+    /**
+     * this function deletes the top value
+     */
+    public void pop(){
+        if(head == null) {
+            System.out.println("Stack is empty");
+        }
+        else {
+            Node temp = head;
+            head = head.next;
         }
     }
 
